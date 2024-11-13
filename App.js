@@ -1,85 +1,42 @@
-import React from "react";
-import {
-  Text,
-  Link,
-  HStack,
-  Center,
-  Heading,
-  Switch,
-  useColorMode,
-  NativeBaseProvider,
-  extendTheme,
-  VStack,
-  Box,
-} from "native-base";
-import NativeBaseIcon from "./components/NativeBaseIcon";
-import { Platform } from "react-native";
-
-// Define the config
-const config = {
-  useSystemColorMode: false,
-  initialColorMode: "dark",
-};
-
-// extend the theme
-export const theme = extendTheme({ config });
+import React from 'react';
+import { NativeBaseProvider, Box, Text, Button, HStack, StatusBar, Center } from 'native-base';
+import AlertExample from './src/AlertDialog';
+import MenuExample from './src/Menu';
+import ModalExample from './src/Modal';
+import PopoverExample from './src/Popover';
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center
-        _dark={{ bg: "blueGray.900" }}
-        _light={{ bg: "blueGray.50" }}
-        px={4}
-        flex={1}
-      >
-        <VStack space={5} alignItems="center">
-          <NativeBaseIcon />
-          <Heading size="lg">Welcome to NativeBase</Heading>
-          <HStack space={2} alignItems="center">
-            <Text>Edit</Text>
-            <Box
-              _web={{
-                _text: {
-                  fontFamily: "monospace",
-                  fontSize: "sm",
-                },
-              }}
-              px={2}
-              py={1}
-              _dark={{ bg: "blueGray.800" }}
-              _light={{ bg: "blueGray.200" }}
-            >
-              App.js
-            </Box>
-            <Text>and save to reload.</Text>
-          </HStack>
-          <Link href="https://docs.nativebase.io" isExternal>
-            <Text color="primary.500" underline fontSize={"xl"}>
-              Learn NativeBase
-            </Text>
-          </Link>
-          <ToggleDarkMode />
-        </VStack>
-      </Center>
-    </NativeBaseProvider>
-  );
-}
+      <Box flex={1} safeArea>
+        <HStack flex={1}>
+          {/*---------------------Primer espacio con AlertDialog-------------------------*/}
+          <Box flex={1} bg="rgba(255, 99, 99, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>
+            <Text fontSize="xl" mt={5}>AlertDialog</Text>
+            <Center flex={1}><AlertExample /></Center>  
+          </Box>
 
-// Color Switch Component
-function ToggleDarkMode() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <HStack space={2} alignItems="center">
-      <Text>Dark</Text>
-      <Switch
-        isChecked={colorMode === "light"}
-        onToggle={toggleColorMode}
-        aria-label={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
-      />
-      <Text>Light</Text>
-    </HStack>
+          {/*---------------------Segundo espacio con Menu------------------------------*/}
+          <Box flex={1} bg="rgba(99, 255, 99, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>
+            <Text fontSize="xl" mt={5}>Menu</Text>
+            <Center flex={1}><MenuExample /></Center>    
+          </Box>
+
+          {/*---------------------Tercer espacio con Modal------------------------------*/}
+          <Box flex={1} bg="rgba(127, 255, 212, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>
+            <Text fontSize="xl" mt={5}>Modal</Text>
+            <Center flex={1}><ModalExample /></Center>
+          </Box>
+
+          {/*---------------------Cuarto espacio con Popover------------------------------*/}
+          <Box flex={1} bg="rgba(255, 255, 99, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>
+            <Text fontSize="xl" mt={5}>Popover</Text>
+             <Center flex={1}><PopoverExample /></Center>
+          </Box>
+
+        </HStack>
+        <StatusBar barStyle="auto" />
+      </Box>
+    </NativeBaseProvider>
   );
 }
