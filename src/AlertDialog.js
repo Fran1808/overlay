@@ -16,7 +16,9 @@ const AlertExample = () => {
           <AlertDialog.CloseButton />
           <AlertDialog.Header>Eliminar cliente</AlertDialog.Header>
           <AlertDialog.Body>
-          Esto eliminará todos los datos relacionados con Alex. Esta acción no se puede revertir. Los datos eliminados no se pueden recuperar.
+          Esto eliminará todos los datos relacionados con Alex. 
+          Esta acción no se puede revertir.
+          Los datos eliminados no se pueden recuperar.
           </AlertDialog.Body>
           <AlertDialog.Footer>
             <Button.Group space={2}>

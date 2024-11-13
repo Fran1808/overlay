@@ -5,23 +5,24 @@ const PopoverExample = () => {
         return <Box w="100%" alignItems="center">
             <Popover trigger={triggerProps => {
             return <Button {...triggerProps} colorScheme="amber">
-                    Delete Customer
+                    Eliminar cliente
                   </Button>;
           }}>
               <Popover.Content accessibilityLabel="Delete Customerd" w="56">
                 <Popover.Arrow />
                 <Popover.CloseButton />
-                <Popover.Header>Delete Customer</Popover.Header>
+                <Popover.Header>Eliminar cliente</Popover.Header>
                 <Popover.Body>
-                  This will remove all data relating to Alex. This action cannot be
-                  reversed. Deleted data can not be recovered.
+                  Esto eliminará todos los datos relacionados con Alex. 
+                  Esta acción no se puede revertir.
+                  Los datos eliminados no se pueden recuperar.
                 </Popover.Body>
                 <Popover.Footer justifyContent="flex-end">
                   <Button.Group space={2}>
                     <Button colorScheme="coolGray" variant="ghost">
-                      Cancel
+                      Cancelar
                     </Button>
-                    <Button colorScheme="danger">Delete</Button>
+                    <Button colorScheme="danger">Eliminar</Button>
                   </Button.Group>
                 </Popover.Footer>
               </Popover.Content>

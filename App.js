@@ -9,6 +9,12 @@ export default function App() {
   return (
     <NativeBaseProvider>
       <Box flex={1} safeArea>
+
+            {/*---------------------Encabezado-------------------------*/}
+            <Box bg="white" py={4} alignItems="center">
+            <Text fontSize="5xl" color="black" fontWeight="bold">Overlay</Text>
+            </Box>
+
         <HStack flex={1}>
           {/*---------------------Primer espacio con AlertDialog-------------------------*/}
           <Box flex={1} bg="rgba(255, 99, 99, 0.5)" justifyContent="flex-start" alignItems="center" p={4}>

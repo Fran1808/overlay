@@ -6,28 +6,28 @@ const ModalExample = () => {
 
   return (
     <Center>
-      <Button onPress={() => setShowModal(true)}>Open Modal</Button>
+      <Button onPress={() => setShowModal(true)}>Contactanos</Button>
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <Modal.Content maxWidth="400px">
           <Modal.CloseButton />
-          <Modal.Header>Contact Us</Modal.Header>
+          <Modal.Header>Contactanos</Modal.Header>
           <Modal.Body>
             <FormControl>
-              <FormControl.Label>Name</FormControl.Label>
+              <FormControl.Label>Nombre</FormControl.Label>
               <Input />
             </FormControl>
             <FormControl mt="3">
-              <FormControl.Label>Email</FormControl.Label>
+              <FormControl.Label>Correo</FormControl.Label>
               <Input />
             </FormControl>
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>
               <Button variant="ghost" colorScheme="blueGray" onPress={() => setShowModal(false)}>
-                Cancel
+                Cancelar
               </Button>
               <Button onPress={() => setShowModal(false)}>
-                Save
+                Guardar
               </Button>
             </Button.Group>
           </Modal.Footer>
